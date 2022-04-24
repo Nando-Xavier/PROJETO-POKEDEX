@@ -1,3 +1,20 @@
+##pimeiro iniciar um projeto node dentro da pasta PAI
+ npm init -y
+
+#instalar as dependencias
+npm i express ejs
+
+#instalar o nodemon  como dependencia de desenvolvimento
+npm i --D nodemon
+
+# criar na pasta package.json um script chamado: "dev"
+"dev": "nodemon -e js,html,css,ejs"
+
+
+
+
+
+
 # Logs
 logs
 *.log

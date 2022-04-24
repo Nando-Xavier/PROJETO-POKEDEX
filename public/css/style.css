@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2? família=Roboto:ital,wght@0,100;0.300;0.400;0.500;0.700;0.900;1.100;1.300;1.400;1.500;1.700;1.900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: linear-gradient(to top, #0cb6e1, rgb(234, 7, 250), #0cb6e1);
+}
+header#logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 25vh;
+}
+header img {
+  width: 50%;
+  height: 20vh;
+}
+header h1 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 3rem;
+}
+main {
+  min-height: 0%;
+}
+
+footer {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  text-align: start;
+  color: #fff;
+}
+main {
+  margin: 0 5rem 0 5rem;
+}
+section#flex {
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+section#flex div.card {
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background-color: #04fbf330;
+  width: 13rem;
+  border: 0.3rem solid #ffffff;
+  box-shadow: 10px 5px 5px rgb(79, 78, 78);
+  padding: 0.5rem;
+  transition: transform 0.1s ease-in-out;
+}
+section#flex div.card:hover {
+  transform: scale(1.05);
+}
+section#flex div.card img {
+  width: 90%;
+}
+section#flex div.card h2 {
+  margin-bottom: 1rem;
+}
+section#flex div.card p#descricao {
+  margin-bottom: 1rem;
+}
+section#flex div.card div.detalhes {
+  display: block;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
