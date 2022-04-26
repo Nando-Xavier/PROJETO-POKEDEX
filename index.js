@@ -6,6 +6,9 @@ const __dirname = path.resolve(path.dirname("")); // __dirname serve para inform
 
 const server = express(); // instanciando o express dentro da const "server"
 
+server.use(express.urlencoded({extended: true}))
+server.use(express.json())
+
 server.set("view engine", "ejs"); // mudar a forma com o express reconhece arquivos que por padrão é somente HTML
 
 server.use(express.static(path.join(__dirname, "public"))); // Esse comando serve para juntar a pasta public com minha pasta views
@@ -18,6 +21,7 @@ server.listen(port, () => {
 });
 let pokedex = [
   {
+    id: 1,
     numero: "Nº150",
     nome: "Mewtwo",
     tipo: "Psíquico",
@@ -30,6 +34,7 @@ let pokedex = [
     habilidade: "Pressão",
   },
   {
+    id: 2,
     numero: "Nº244",
     nome: "Entei",
     tipo: "Fogo",
@@ -42,6 +47,7 @@ let pokedex = [
     habilidade: "Pressão",
   },
   {
+    id: 3,
     numero: "Nº083",
     nome: "Farfetch'd",
     tipo: "Fighting",
@@ -55,11 +61,11 @@ let pokedex = [
     habilidade: "Firme",
   },
   {
+    id: 4,
     numero: "Nº004",
     nome: "Charmander",
     tipo: "Fire",
-    imagem:
-      "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
+    imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
     descricao:
       "Tem preferência por coisas quentes. Quando chove, diz-se que o vapor jorra da ponta da cauda..",
     altura: "0,6 m",
@@ -70,10 +76,31 @@ let pokedex = [
 ];
 server.get("/", (rec, res) => {
   // é um metodo http para trazer uma pagina como resposta ao usuario
+
   res.render("index.ejs", { pokedex });
 });
 
-server.get("/detalhes", (rec, res) => {
+server.get("/detalhes/:id", (rec, res) => {
+  console.log(rec.params);
   // é um metodo http para trazer uma pagina como resposta ao usuario
-  res.render("detalhes.ejs");
+  let pokemon
+  pokedex.filter((elemento) => {
+    if (elemento.id == rec.params.id) {
+      pokemon = elemento;
+    }
+  });
+  res.render("detalhes.ejs", {
+    pokemon,
+  });
 });
+
+server.get("/cadastro/", (rec, res) => {
+  res.render("cadastro.ejs")
+});
+server.post("/cadastro/", (rec, res) =>{
+  let id = pokedex[pokedex.length-1].id + 1
+
+  const { numero, nome, tipo, descricao, imagem, altura, peso, categoria, habilidade } = rec.body
+  pokedex.push({id: id, numero, nome, tipo, imagem, descricao, altura, peso, categoria, habilidade })
+res.send("foi enviado")
+})
