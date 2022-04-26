@@ -6,8 +6,8 @@ const __dirname = path.resolve(path.dirname("")); // __dirname serve para inform
 
 const server = express(); // instanciando o express dentro da const "server"
 
-server.use(express.urlencoded({extended: true}))
-server.use(express.json())
+server.use(express.urlencoded({ extended: true }));
+server.use(express.json());
 
 server.set("view engine", "ejs"); // mudar a forma com o express reconhece arquivos que por padrão é somente HTML
 
@@ -83,7 +83,7 @@ server.get("/", (rec, res) => {
 server.get("/detalhes/:id", (rec, res) => {
   console.log(rec.params);
   // é um metodo http para trazer uma pagina como resposta ao usuario
-  let pokemon
+  let pokemon;
   pokedex.filter((elemento) => {
     if (elemento.id == rec.params.id) {
       pokemon = elemento;
@@ -95,12 +95,33 @@ server.get("/detalhes/:id", (rec, res) => {
 });
 
 server.get("/cadastro/", (rec, res) => {
-  res.render("cadastro.ejs")
+  res.render("cadastro.ejs");
 });
-server.post("/cadastro/", (rec, res) =>{
-  let id = pokedex[pokedex.length-1].id + 1
+server.post("/cadastro/", (rec, res) => {
+  let id = pokedex[pokedex.length - 1].id + 1;
 
-  const { numero, nome, tipo, descricao, imagem, altura, peso, categoria, habilidade } = rec.body
-  pokedex.push({id: id, numero, nome, tipo, imagem, descricao, altura, peso, categoria, habilidade })
-res.send("foi enviado")
-})
+  const {
+    numero,
+    nome,
+    tipo,
+    descricao,
+    imagem,
+    altura,
+    peso,
+    categoria,
+    habilidade,
+  } = rec.body;
+  pokedex.push({
+    id: id,
+    numero,
+    nome,
+    tipo,
+    descricao,
+    imagem,
+    altura,
+    peso,
+    categoria,
+    habilidade,
+  });
+  res.redirect("/")
+});
