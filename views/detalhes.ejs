@@ -11,18 +11,16 @@
     <%- include("./partials/header.ejs") %>
     <main>
       <section id="flex-1">
-        <!-- <img src="<%=pokemon.imagem %>" alt=""> -->
-        <!-- <h3><%=pokemon.descricao%></h3> -->
           <article class="card">
             <p><%=pokemon.numero%></p> 
             <h2><%= pokemon.nome%></h2>
             <img src="<%=pokemon.imagem %>" alt="">
             <h4><p id="descricao"><%=pokemon.descricao%></p></h4>
             <div class="detalhes">
-              <p class="item"><h3>Tipo: </h3><%=pokemon.tipo%></p>
-              <p class="item"><h3>Peso: </h3><%=pokemon.peso%></p>
-              <p class="item"><h3>Categoria: </h3><%=pokemon.categoria%></p>
-              <p class="item"><h3>Habilidade: </h3><%=pokemon.habilidade%></p>
+              <h4 class="item"><span class="cor">Tipo: </span><%=pokemon.tipo%></h4> 
+              <h4 class="item"><span class="cor">Habilidade: </span><%=pokemon.habilidade%></h4>
+              <h4 class="item"><span class="cor">Categoria: </span><%=pokemon.categoria%></h4>
+              <h4 class="item"><span class="cor">Peso: </span><%=pokemon.peso%></h4>
               </div>
               </article>
       </section>

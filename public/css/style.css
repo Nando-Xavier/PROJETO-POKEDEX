@@ -5,8 +5,7 @@
   padding: 0;
 }
 body#body01 {
-  background: linear-gradient(to bottom right, #0400ff,  #f9f9f9);
-
+  background: linear-gradient(to bottom right, #0400ff, #f9f9f9);
 }
 header#logo {
   background-color: #ff0404;
@@ -45,7 +44,10 @@ footer {
   color: #ffffff;
 }
 main {
-  width: 100%;
+  width: 100vw;
+  height: 100;
+  display: flex;
+  justify-content: center;
 }
 section#flex-1 {
   margin-bottom: 3rem;
@@ -73,9 +75,9 @@ section#flex-1 article.card {
   box-shadow: 10px 5px 5px rgb(79, 78, 78);
   padding: 0.5rem;
   transition: transform 0.1s ease-in-out;
-  color: #f2ff00;
+  color: #ffffff;
   text-decoration: none;
-  background: linear-gradient(to bottom right, #b300ff,  #0c88e1);
+  background: linear-gradient(to bottom right, #b300ff, #0c88e1);
 }
 section#flex-1 article.card-1:hover {
   transform: scale(1.05);
@@ -93,7 +95,7 @@ section#flex-1 darticle.card div.detalhes {
   justify-content: center;
   text-decoration: none;
 }
-section#flex-1  a{
+section#flex-1 a {
   text-decoration: none;
 }
 section#flex-1 article.card img {
@@ -110,41 +112,57 @@ section#flex-1 article.card h4 p#descricao {
 section#flex-1 darticle.card div.detalhes {
   display: flex;
   justify-content: center;
-  text-decoration: none;
 }
-body#body{
+h4.item{
+  margin: 0.9rem;
+}
+span.cor{
+  /* margin: 4px; */
+  color: #000000;
+}
+body#body {
+  width: 100vw;
+  height: 100vh;
   background-color: #043d3d;
 }
-main{
-  display: flex;
-  justify-content: center;
-}
-Form{
+Form {
+  margin-top: 2rem;
   color: #ffffff;
-  /* gap: 16px; */
+  gap: 16px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form fieldset#principal{
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-}
-form fieldset{
-  width: 70%;
-  gap: 10px;
   border: none;
+  gap: 1rem;
+}
+form fieldset#principal .id{
+  width:75%;
   display: flex;
   flex-direction: column;
-}
-form fieldset fieldset#principal{
-  width: 100%;
-  color: #ffffff;
-  /* gap: 10px; */
   border: none;
-  display: flex;
-  /* margin: 0.5rem; */
 }
-form legend{
-  margin: 10px;
-  color: #ffffff;
-  font-size: 2rem;
+input{
+  width: 100%;
+}
+form fieldset fieldset#principal {
+  width: 60%;
+  color: #ffffff
+} 
+div.detalhes{
+margin: 1rem;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+button{
+  margin-bottom: 3rem;
 }
