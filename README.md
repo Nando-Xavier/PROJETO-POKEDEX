@@ -14,6 +14,6 @@ As ferramentas usadas para esse projeto são:
 </div>
 
 ## Contato:
-<a>
-
+<a href="https://www.linkedin.com/in/fernando-pereira-xavier-263885226/" target="_blank">  
+<img src="https://img.icons8.com/color/96/000000/linkedin-circled--v4.png"/>
 </a>
