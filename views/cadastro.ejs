@@ -56,6 +56,19 @@
         <button onclick="alerta()" type="submit">Enviar</button>
         <script>
           function alerta() {
+            let nome = formulario.nome.value;
+            let imagem = formulario.nome.value;
+            let tipo = formulario.tipo.value;
+            let descricao = formulario.descricao.value;
+            let altura = formulario.altura.value;
+            let peso = formulario.peso.value;
+            let categoriae = formulario.categoriae.value;
+            let habilidade = formulario.habilidade.value;
+            if (nome == "") {
+              alert("Campo nome é obrigatorio")
+              formulario.nome.focus()
+              return false;
+            }
             swal({
               title: "Olá!",
               text: "Pokemon cadastrado com sucesso.",
