@@ -1,3 +1,5 @@
+import {} from 'dotenv/config'
+
 import express from "express"; // Importando o express. Para isso é preciso definir o modelo de importação no nosso package.json: "type": "module"
 
 import path from "path"; // Serve para definir caminhos padrões
@@ -13,7 +15,7 @@ server.set("view engine", "ejs"); // mudar a forma com o express reconhece arqui
 
 server.use(express.static(path.join(__dirname, "public"))); // Esse comando serve para juntar a pasta public com minha pasta views
 
-const port = 3007; // definindo a porta que vai rodar o servidor
+const port = process.env || 3007; // definindo a porta que vai rodar o servidor
 
 server.listen(port, () => {
   // é uma função do expres para criar servidor
@@ -123,5 +125,5 @@ server.post("/cadastro/", (rec, res) => {
     categoria,
     habilidade,
   });
-  res.redirect("/")
+  res.redirect("/");
 });
